@@ -84,6 +84,7 @@ class MCP23S17 {
         MCP23S17(SPIClass &spi, uint8_t cs, uint8_t addr);
 #endif
         void begin();
+
         /**
          * @brief Overload Method for begin()
          * 
@@ -93,6 +94,7 @@ class MCP23S17 {
          * @param chipSelect chip select Pin of the target SPI bus
          */
         void begin(uint8_t clockPin, uint8_t misoPin, uint8_t mosiPin, uint8_t chipSelect);
+        
         void pinMode(uint8_t pin, uint8_t mode);
         void digitalWrite(uint8_t pin, uint8_t value);
         uint8_t digitalRead(uint8_t pin);
