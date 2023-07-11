@@ -134,15 +134,15 @@ void MCP23S17::begin() {
 
 void MCP23S17::begin(uint8_t clockPin, uint8_t misoPin, uint8_t mosiPin, uint8_t chipSelect){
     _spi->begin(clockPin, misoPin, mosiPin, chipSelect);
-    ::pinmode(chipSelect, OUTPUT);
+    ::pinMode(chipSelect, OUTPUT);
     ::digitalWrite(chipSelect, HIGH);
     uint8_t cmd = 0b01000000;
     ::digitalWrite(chipSelect, LOW);
     _spi->transfer(cmd);
     _spi->transfer(MCP_IOCONA);
     _spi->transfer(0x18);
-    ::digitalWrite(chipselect, HIGH);
-    writeAll()
+    ::digitalWrite(chipSelect, HIGH);
+    writeAll();
 }
 
 /*! This private function reads a value from the specified register on the chip and
