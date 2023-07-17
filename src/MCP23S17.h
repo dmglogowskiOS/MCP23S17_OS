@@ -129,6 +129,6 @@ class MCP23S17 {
         uint8_t getInterruptAValue();
         uint8_t getInterruptBPins();
         uint8_t getInterruptBValue();
-        SPIClass* MCP23S17::getSPI()
+        SPIClass* getSPI();
 };
 #endif
