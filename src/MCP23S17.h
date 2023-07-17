@@ -80,7 +80,22 @@ class MCP23S17 {
         MCP23S17(DSPI *spi, uint8_t cs, uint8_t addr);
         MCP23S17(DSPI &spi, uint8_t cs, uint8_t addr);
 #else
+        /**
+         * @brief Construct a new MCP23S17 object
+         * 
+         * @param spi SPI Object
+         * @param cs CS Pin
+         * @param addr Address
+         */
         MCP23S17(SPIClass *spi, uint8_t cs, uint8_t addr);
+
+        /**
+         * @brief Construct a new MCP23S17 object
+         * 
+         * @param spi SPI Object
+         * @param cs CS Pin
+         * @param addr Address
+         */
         MCP23S17(SPIClass &spi, uint8_t cs, uint8_t addr);
 #endif
         void begin();
@@ -114,5 +129,6 @@ class MCP23S17 {
         uint8_t getInterruptAValue();
         uint8_t getInterruptBPins();
         uint8_t getInterruptBValue();
+        SPIClass* MCP23S17::getSPI()
 };
 #endif

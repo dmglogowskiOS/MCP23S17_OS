@@ -607,3 +607,7 @@ uint8_t MCP23S17::getInterruptBValue() {
     readRegister(MCP_INTCAPB);
     return _reg[MCP_INTCAPB];
 } 
+
+SPIClass* MCP23S17::getSPI(){
+    return _spi;
+}
