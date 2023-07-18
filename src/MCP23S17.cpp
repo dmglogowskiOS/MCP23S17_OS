@@ -236,7 +236,7 @@ void MCP23S17::pinMode(uint8_t pin, uint8_t mode) {
             _reg[dirReg] &= ~(1<<pin);
             writeRegister(dirReg);
             break;
-
+ 
         case INPUT:
         case INPUT_PULLUP:
             _reg[dirReg] |= (1<<pin);
@@ -268,6 +268,7 @@ void MCP23S17::digitalWrite(uint8_t pin, uint8_t value) {
     uint8_t dirReg = MCP_IODIRA;
     uint8_t puReg = MCP_GPPUA;
     uint8_t latReg = MCP_OLATA;
+
     if (pin >= 8) {
         pin -= 8;
         dirReg = MCP_IODIRB;
